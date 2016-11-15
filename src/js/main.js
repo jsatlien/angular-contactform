@@ -1,7 +1,7 @@
 import angular from 'angular';
 
-// import { FormController } from './controllers/form';
+import { ContactController } from './controllers/contact';
 
 angular
   .module('app', [])
-  .controller('FormController', FormController);
+  .controller('ContactController', ContactController);

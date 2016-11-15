@@ -8,8 +8,29 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body ng-app='app'>
-    <div class="container" ng-controller='FormController'>
-      
+    <div class="container" ng-controller='ContactController'>
+      <form ng-submit="addContact(contact)">
+        <header>Contact Us:</header>
+        <label class="label">Name</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="John Doe">
+        </p>
+        <label class="label">Email</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="youremail@here.com">
+        </p>
+        <label class="label">Website</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="http://www.example.com/">
+        </p>
+        <label class="label">Message</label>
+        <p class="control">
+            <textarea class="textarea" placeholder="A friendly message..."></textarea>
+        </p>
+        <p class="control">
+         <button class="button is-primary">Submit Contact Information</button>
+       </p>
+      </form>
     </div>
     <script src="js/bundle.js"></script>
   </body>
