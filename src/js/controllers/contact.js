@@ -13,7 +13,13 @@ function ContactController ($scope, $http) {
 
   init();
 
-  
+  $scope.addContact = function (contact) {
+    $http.post(SERVER_URL).then(function (response) {
+      let contact = response.data;
+      $scope.contacts.push(contact);
+      console.log($scope.contacts);
+    })
+  }
 
 }
 

@@ -13,19 +13,22 @@
         <header>Contact Us:</header>
         <label class="label">Name</label>
         <p class="control">
-          <input class="input" type="text" placeholder="John Doe">
+          <input class="input" type="text" placeholder="John Doe"
+                  ng-model="contact.name"/>
         </p>
         <label class="label">Email</label>
         <p class="control">
-          <input class="input" type="text" placeholder="youremail@here.com">
+          <input class="input" type="text" placeholder="youremail@here.com"
+                  ng-model="contact.email"/>
         </p>
         <label class="label">Website</label>
         <p class="control">
-          <input class="input" type="text" placeholder="http://www.example.com/">
+          <input class="input" type="text" placeholder="http://www.example.com/"
+                  ng-model="contact.website"/>
         </p>
         <label class="label">Message</label>
         <p class="control">
-            <textarea class="textarea" placeholder="A friendly message..."></textarea>
+            <textarea class="textarea" placeholder="A friendly message..." ng-model="contact.message"></textarea>
         </p>
         <p class="control">
          <button class="button is-primary">Submit Contact Information</button>
