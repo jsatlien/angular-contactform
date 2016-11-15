@@ -11,24 +11,29 @@
     <div class="container" ng-controller='ContactController'>
       <form ng-submit="addContact(contact)">
         <header>Contact Us:</header>
-        <label class="label">Name</label>
+        <label class='label'>Name</label>
         <p class="control">
           <input class="input" type="text" placeholder="John Doe"
-                  ng-model="contact.name"/>
+                  ng-model="contact.name" required ng-keyup="validateName(contact.name)"/>
+           <span class="input-error" >{{ errors.name }}</span>
         </p>
         <label class="label">Email</label>
         <p class="control">
           <input class="input" type="text" placeholder="youremail@here.com"
-                  ng-model="contact.email"/>
+                  ng-model="contact.email" required ng-keyup="validateEmail(contact.email)"/>
+           <span class="input-error" >{{ errors.email }}</span>
         </p>
         <label class="label">Website</label>
         <p class="control">
           <input class="input" type="text" placeholder="http://www.example.com/"
-                  ng-model="contact.website"/>
+                  ng-model="contact.website" required ng-keyup="validateUrl(contact.website)"/>
+           <span class="input-error" >{{ errors.website }}</span>
         </p>
         <label class="label">Message</label>
         <p class="control">
-            <textarea class="textarea" placeholder="A friendly message..." ng-model="contact.message"></textarea>
+            <textarea class="textarea" placeholder="A friendly message..."
+                      ng-model="contact.message" required ng-keyup="validateMessage(contact.message)"></textarea>
+             <span class="input-error" >{{ errors.message }}</span>
         </p>
         <p class="control">
          <button class="button is-primary">Submit Contact Information</button>
