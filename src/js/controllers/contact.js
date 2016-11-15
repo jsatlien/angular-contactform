@@ -19,7 +19,12 @@ function ContactController ($scope, $http) {
       $scope.contacts.push(contact);
       console.log($scope.contacts);
       console.log(contact)
+      $scope.contact = {}
     })
+  }
+
+  $scope.validateName = function (name) {
+    
   }
 
   ContactController.$inject = [$scope, $http];
