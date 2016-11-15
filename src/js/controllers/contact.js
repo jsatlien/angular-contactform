@@ -22,12 +22,6 @@ function ContactController ($scope, $http) {
     })
   }
 
-  function clearContacts() {
-      $http.delete(SERVER_URL).then(function (response) {
-        console.log(response)
-      })
-  }
-
   ContactController.$inject = [$scope, $http];
 }
 
