@@ -14,15 +14,22 @@ function ContactController ($scope, $http) {
   init();
 
   $scope.addContact = function (contact) {
-    $http.post(SERVER_URL).then(function (response) {
+    $http.post(SERVER_URL, contact).then(function (response) {
       let contact = response.data;
       $scope.contacts.push(contact);
       console.log($scope.contacts);
+      console.log(contact)
     })
   }
 
+  function clearContacts() {
+      $http.delete(SERVER_URL).then(function (response) {
+        console.log(response)
+      })
+  }
+
+  ContactController.$inject = [$scope, $http];
 }
 
-ContactController.$inject = [$scope, $http];
 
 export { ContactController };
