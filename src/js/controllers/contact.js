@@ -27,7 +27,7 @@ function ContactController ($scope, $http) {
   };
 
   $scope.validateName = function (name) {
-    if (name === '') {
+    if (name && (name === '' || name === undefined)) {
       $scope.errors.name = "Must supply a name.";
       return false;
     } else {
@@ -57,7 +57,7 @@ function ContactController ($scope, $http) {
   };
 
   $scope.validateMessage = function (message) {
-    if (message && message === '') {
+    if (message && (message === '' || message === undefined)) {
       $scope.errors.message = 'Message cannot be empty.';
       return false;
     } else {
