@@ -37,9 +37,11 @@ function ContactController ($scope, $http) {
   };
 
   $scope.validateUrl = function (url) {
-      if (url && (url === '' || !url.startsWith('http'))) {
+      if (url && (!url.startsWith('http'))) {
         $scope.errors.website = "Must supply a valid URL starting with http:// or https://";
         return false;
+      } else if (url === '' || url === undefined) {
+        $scope.errors.website = "Must supply a valid URL."
       } else {
         $scope.errors.website = '';
         return true;
@@ -50,6 +52,8 @@ function ContactController ($scope, $http) {
     if (email && !email.includes('@')) {
       $scope.errors.email = 'Must supply a valid email address. (www.example@email.com)';
       return false;
+    } else if (email === '' || email === undefined) {
+      $scope.errors.email = 'Must supply a valid email address.'
     } else {
       $scope.errors.email = '';
       return true;
@@ -63,7 +67,7 @@ function ContactController ($scope, $http) {
     } else {
       $scope.errors.message = '';
       return true;
-    };
+    }
   };
 
 
@@ -73,11 +77,18 @@ function ContactController ($scope, $http) {
       return true;
     } else {
       return false;
-    }
-  }
+    };
+  };
 
-  ContactController.$inject = [$scope, $http];
-}
+  // $scope.deleteMe = function (contact) {
+  //   $http.delete(SERVER_URL + contact._id).then(function (response) {
+  //     console.log(response);
+  //     $scope.contacts = $scope.contacts.filter(function (x) {
+  //     return x._id !== contact._id;
+  //     });
+  //   });
+  // };
+};
 
-
+ContactController.$inject = ['$scope', '$http'];
 export { ContactController };
