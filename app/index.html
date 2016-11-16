@@ -39,6 +39,31 @@
          <button class="button is-primary">Submit Contact Information</button>
        </p>
       </form>
+      <h1>Contact Index</h1>
+     <ul class="contacts-display">
+       <li ng-repeat="contact in contacts">
+         <div class="box">
+       <article class="media">
+         <div class="media-left">
+           <!-- <figure class="image is-64x64">
+             <img src="http://www.placecage.com/200/200" alt="Image">
+           </figure> -->
+         </div>
+         <div class="media-content">
+           <div class="content">
+             <p>
+               <strong>{{ contact.name }}</strong> <small>{{ contact.email }}</small>
+               <br>
+               <small><a href='{{ contact.website }}'>{{ contact. website }}</a> </small>
+               <br>
+               {{ contact.message }}
+             </p>
+           </div>
+         </div>
+       </article>
+     </div>
+       </li>
+     </ul>
     </div>
     <script src="js/bundle.js"></script>
   </body>
