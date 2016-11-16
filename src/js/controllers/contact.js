@@ -57,7 +57,7 @@ function ContactController ($scope, $http) {
   };
 
   $scope.validateMessage = function (message) {
-    if (message === '') {
+    if (message && message === '') {
       $scope.errors.message = 'Message cannot be empty.';
       return false;
     } else {
