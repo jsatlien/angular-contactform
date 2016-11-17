@@ -18,9 +18,10 @@ function ContactController ($scope, $http) {
       if ($scope.validateForm(contact)) {
         $http.post(SERVER_URL, contact).then(function (response) {
         let contact = response.data;
+        // contact.imageURL = "http://www.stevensegallery.com/200/200"
         $scope.contacts.push(contact);
-        console.log($scope.contacts);
         console.log(contact)
+        console.log($scope.contacts);
         $scope.contact = {}
         });
       } ;
@@ -31,7 +32,7 @@ function ContactController ($scope, $http) {
       $scope.errors.name = "Must supply a name.";
       return false;
     } else {
-      $scope.errors.name = ''
+      $scope.errors.name = '';
       return true;
     };
   };
